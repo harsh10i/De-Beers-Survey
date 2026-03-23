@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Diamond Jewellery in India — Consumer Survey</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --gold: #B8963E;
+  --gold-light: #E8D5A0;
+  --gold-pale: #FAF6EC;
+  --ink: #1C1C1C;
+  --mid: #5A5A5A;
+  --light: #9A9A9A;
+  --rule: #E4DDD0;
+  --bg: #F5F2EC;
+  --white: #FFFFFF;
+  --accent-red: #C0410F;
+  --accent-green: #1A7A45;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--bg);
+  font-family: 'DM Sans', sans-serif;
+  color: var(--ink);
+  min-height: 100vh;
+}
+
+/* ── HEADER BANNER ── */
+.form-header {
+  background: var(--ink);
+  color: var(--white);
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+}
+.header-top-bar {
+  background: var(--gold);
+  height: 6px;
+  width: 100%;
+}
+.header-inner {
+  padding: 36px 0 32px;
+  max-width: 680px;
+  margin: 0 auto;
+  padding-left: 24px;
+  padding-right: 24px;
+}
+.form-eyebrow {
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--gold-light);
+  margin-bottom: 12px;
+}
+.form-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1.25;
+  color: #fff;
+  margin-bottom: 14px;
+}
+.form-title em { font-style: italic; color: var(--gold-light); }
+.form-subtitle {
+  font-size: 13px;
+  color: #B0A898;
+  line-height: 1.6;
+  max-width: 520px;
+}
+.form-meta {
+  display: flex;
+  gap: 24px;
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #333;
+}
+.meta-item {
+  font-size: 11px;
+  color: #888;
+}
+.meta-item strong { color: var(--gold-light); }
+
+/* Progress bar */
+.progress-wrap {
+  background: var(--ink);
+  padding: 0 0 16px;
+  border-bottom: 1px solid #2A2A2A;
+}
+.progress-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+.progress-label {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: #666;
+  margin-bottom: 6px;
+}
+.progress-track {
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.4s ease;
+}
+
+/* ── FORM BODY ── */
+.form-body {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 32px 24px 80px;
+}
+
+/* Section divider */
+.section-divider {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 36px 0 24px;
+}
+.section-divider:first-child { margin-top: 0; }
+.section-num {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: var(--gold);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 400;
+  color: var(--ink);
+  font-style: italic;
+}
+.section-line {
+  flex: 1;
+  height: 1px;
+  background: var(--rule);
+}
+
+/* Question card */
+.q-card {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 22px 24px;
+  margin-bottom: 14px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  position: relative;
+}
+.q-card:focus-within {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(184,150,62,0.08);
+}
+.q-card.answered {
+  border-left: 3px solid var(--gold);
+}
+
+.q-number {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 6px;
+}
+.q-text {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1.4;
+  color: var(--ink);
+  margin-bottom: 4px;
+}
+.q-hint {
+  font-size: 11px;
+  color: var(--light);
+  margin-bottom: 16px;
+  line-height: 1.4;
+}
+
+/* ── OPTION TYPES ── */
+
+/* Radio / checkbox options */
+.options-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.option-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+  user-select: none;
+}
+.option-item:hover {
+  background: var(--gold-pale);
+  border-color: var(--gold-light);
+}
+.option-item input[type="radio"],
+.option-item input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 1.5px solid #CCC;
+  border-radius: 50%;
+  flex-shrink: 0;
+  position: relative;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.option-item input[type="checkbox"] {
+  border-radius: 4px;
+}
+.option-item input[type="radio"]:checked,
+.option-item input[type="checkbox"]:checked {
+  border-color: var(--gold);
+  background: var(--gold);
+}
+.option-item input[type="radio"]:checked::after {
+  content: '';
+  position: absolute;
+  width: 6px; height: 6px;
+  background: #fff;
+  border-radius: 50%;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+}
+.option-item input[type="checkbox"]:checked::after {
+  content: '✓';
+  position: absolute;
+  font-size: 11px;
+  color: #fff;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-weight: 600;
+}
+.option-item.selected {
+  background: var(--gold-pale);
+  border-color: var(--gold);
+}
+.option-label {
+  font-size: 13.5px;
+  color: var(--ink);
+  line-height: 1.3;
+  flex: 1;
+}
+.option-sublabel {
+  font-size: 11px;
+  color: var(--light);
+  margin-top: 1px;
+}
+
+/* Scale (1–5) */
+.scale-wrap {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+.scale-labels {
+  display: flex;
+  justify-content: space-between;
+  font-size: 10px;
+  color: var(--light);
+  margin-top: 6px;
+}
+.scale-btn {
+  flex: 1;
+  height: 40px;
+  border: 1.5px solid var(--rule);
+  border-radius: 6px;
+  background: var(--white);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--mid);
+  cursor: pointer;
+  transition: all 0.15s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scale-btn:hover { background: var(--gold-pale); border-color: var(--gold-light); }
+.scale-btn.active { background: var(--gold); border-color: var(--gold); color: #fff; }
+
+/* Dropdown */
+.form-select {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13.5px;
+  color: var(--ink);
+  background: var(--white);
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='7' viewBox='0 0 12 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L6 6L11 1' stroke='%239A9A9A' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  cursor: pointer;
+  transition: border-color 0.15s;
+}
+.form-select:focus { outline: none; border-color: var(--gold); }
+
+/* Text input */
+.form-input, .form-textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 13.5px;
+  color: var(--ink);
+  background: var(--white);
+  transition: border-color 0.15s;
+  resize: none;
+}
+.form-input:focus, .form-textarea:focus {
+  outline: none;
+  border-color: var(--gold);
+}
+.form-textarea { min-height: 80px; }
+
+/* Ranking drag */
+.rank-list { display: flex; flex-direction: column; gap: 6px; }
+.rank-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 9px 14px;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: var(--white);
+  cursor: grab;
+  transition: background 0.15s, box-shadow 0.15s;
+  user-select: none;
+}
+.rank-item:hover { background: var(--gold-pale); box-shadow: 0 2px 8px rgba(0,0,0,0.06); }
+.rank-item.dragging { opacity: 0.5; cursor: grabbing; }
+.rank-handle { color: var(--light); font-size: 13px; flex-shrink: 0; }
+.rank-num {
+  width: 22px; height: 22px;
+  border-radius: 50%;
+  background: var(--gold-pale);
+  border: 1px solid var(--gold-light);
+  color: var(--gold);
+  font-size: 10px;
+  font-weight: 600;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.rank-label { font-size: 13px; color: var(--ink); flex: 1; }
+
+/* Stat tag — shown inline with questions to explain what stat it validates */
+.stat-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 3px 8px;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  background: #F0ECE2;
+  color: var(--gold);
+  border: 1px solid var(--gold-light);
+}
+.stat-tag .dot { width: 5px; height: 5px; border-radius: 50%; background: var(--gold); }
+
+/* ── SUBMIT SECTION ── */
+.submit-section {
+  background: var(--white);
+  border: 1px solid var(--rule);
+  border-radius: 8px;
+  padding: 28px 24px;
+  text-align: center;
+  margin-top: 32px;
+}
+.submit-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 22px;
+  font-weight: 400;
+  color: var(--ink);
+  margin-bottom: 6px;
+}
+.submit-note {
+  font-size: 12px;
+  color: var(--light);
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+.submit-btn {
+  display: inline-block;
+  background: var(--ink);
+  color: #fff;
+  padding: 14px 40px;
+  border-radius: 4px;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s;
+}
+.submit-btn:hover { background: var(--gold); transform: translateY(-1px); }
+.submit-btn:active { transform: translateY(0); }
+
+/* Thank you state */
+.thankyou {
+  display: none;
+  text-align: center;
+  padding: 60px 24px;
+}
+.thankyou.show { display: block; }
+.thankyou-icon { font-size: 40px; margin-bottom: 16px; }
+.thankyou-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 30px;
+  font-weight: 300;
+  color: var(--ink);
+  margin-bottom: 10px;
+}
+.thankyou-sub { font-size: 13px; color: var(--light); line-height: 1.6; }
+
+/* Sticky counter */
+.sticky-bar {
+  position: fixed;
+  bottom: 0; left: 0; right: 0;
+  background: var(--ink);
+  padding: 10px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 100;
+  border-top: 2px solid var(--gold);
+}
+.sticky-progress { font-size: 11px; color: #888; }
+.sticky-progress strong { color: var(--gold-light); }
+.sticky-mini-bar {
+  flex: 1;
+  margin: 0 20px;
+  height: 3px;
+  background: #333;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.sticky-mini-fill {
+  height: 100%;
+  background: var(--gold);
+  border-radius: 2px;
+  width: 0%;
+  transition: width 0.4s ease;
+}
+.sticky-next {
+  font-size: 11px;
+  color: var(--gold-light);
+  cursor: pointer;
+}
+
+@media (max-width: 720px) {
+  .form-title { font-size: 24px; }
+  .q-text { font-size: 16px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<div class="form-header">
+  <div class="header-top-bar"></div>
+  <div class="header-inner">
+    <div class="form-eyebrow">Consumer Research · Diamond Jewellery · India 2025</div>
+    <h1 class="form-title">How does India <em>really</em> feel<br>about diamond jewellery?</h1>
+    <p class="form-subtitle">A 5-minute survey exploring how Indian consumers think, feel, and decide when it comes to diamond jewellery — across occasions, life stages, and values.</p>
+    <div class="form-meta">
+      <div class="meta-item"><strong>~5 minutes</strong> to complete</div>
+      <div class="meta-item"><strong>18 questions</strong></div>
+      <div class="meta-item"><strong>Anonymous</strong> · no personal data collected</div>
+    </div>
+  </div>
+</div>
+
+<div class="progress-wrap">
+  <div class="progress-inner">
+    <div class="progress-label">
+      <span>Your progress</span>
+      <span id="prog-label">0 of 18 answered</span>
+    </div>
+    <div class="progress-track">
+      <div class="progress-fill" id="prog-fill"></div>
+    </div>
+  </div>
+</div>
+
+<!-- FORM BODY -->
+<div class="form-body" id="form-main">
+
+  <!-- ═══════════ SECTION 1: WHO YOU ARE ═══════════ -->
+  <div class="section-divider">
+    <div class="section-num">1</div>
+    <div class="section-title">A little about you</div>
+    <div class="section-line"></div>
+  </div>
+
+  <!-- Q1 -->
+  <div class="q-card" id="qc1">
+    <div class="q-number">Question 01</div>
+    <div class="q-text">How old are you?</div>
+    <div class="q-hint">Select your age group</div>
+    <div class="options-list">
+      <label class="option-item"><input type="radio" name="q1" value="a" onchange="markAnswered('qc1');updateProgress()"><span class="option-label">Under 22</span></label>
+      <label class="option-item"><input type="radio" name="q1" value="b" onchange="markAnswered('qc1');updateProgress()"><span class="option-label">22–28</span></label>
+      <label class="option-item"><input type="radio" name="q1" value="c" onchange="markAnswered('qc1');updateProgress()"><span class="option-label">29–35</span></label>
+      <label class="option-item"><input type="radio" name="q1" value="d" onchange="markAnswered('qc1');updateProgress()"><span class="option-label">36–45</span></label>
+      <label class="option-item"><input type="radio" name="q1" value="e" onchange="markAnswered('qc1');updateProgress()"><span class="option-label">46–60</span></label>
+      <label class="option-item"><input type="radio" name="q1" value="f" onchange="markAnswered('qc1');updateProgress()"><span class="option-label">Above 60</span></label>
+    </div>
+  </div>
+
+  <!-- Q2 -->
+  <div class="q-card" id="qc2">
+    <div class="q-number">Question 02</div>
+    <div class="q-text">Which city do you currently live in?</div>
+    <div class="q-hint">Select the closest match</div>
+    <select class="form-select" name="q2" onchange="markAnswered('qc2');updateProgress()">
+      <option value="">— Select your city —</option>
+      <option>Mumbai</option>
+      <option>Delhi NCR</option>
+      <option>Bengaluru</option>
+      <option>Hyderabad</option>
+      <option>Chennai</option>
+      <option>Pune</option>
+      <option>Ahmedabad / Surat</option>
+      <option>Jaipur</option>
+      <option>Chandigarh / Ludhiana</option>
+      <option>Kochi / Coimbatore</option>
+      <option>Indore / Nagpur / Bhopal</option>
+      <option>Other Tier-2 city</option>
+      <option>Smaller town / rural</option>
+    </select>
+  </div>
+
+  <!-- Q3 -->
+  <div class="q-card" id="qc3">
+    <div class="q-number">Question 03</div>
+    <div class="q-text">What is your approximate annual personal income?</div>
+    <div class="q-hint">This helps us understand purchasing context — all responses are anonymous</div>
+    <div class="options-list">
+      <label class="option-item"><input type="radio" name="q3" value="a" onchange="markAnswered('qc3');updateProgress()"><span class="option-label">Below ₹5 lakh</span></label>
+      <label class="option-item"><input type="radio" name="q3" value="b" onchange="markAnswered('qc3');updateProgress()"><span class="option-label">₹5 – 12 lakh</span></label>
+      <label class="option-item"><input type="radio" name="q3" value="c" onchange="markAnswered('qc3');updateProgress()"><span class="option-label">₹12 – 25 lakh</span></label>
+      <label class="option-item"><input type="radio" name="q3" value="d" onchange="markAnswered('qc3');updateProgress()"><span class="option-label">₹25 – 60 lakh</span></label>
+      <label class="option-item"><input type="radio" name="q3" value="e" onchange="markAnswered('qc3');updateProgress()"><span class="option-label">Above ₹60 lakh</span></label>
+      <label class="option-item"><input type="radio" name="q3" value="f" onchange="markAnswered('qc3');updateProgress()"><span class="option-label">Prefer not to say</span></label>
+    </div>
+  </div>
+
+  <!-- ═══════════ SECTION 2: BUYING OCCASIONS ═══════════ -->
+  <!-- VALIDATES: 72% wedding/gifting, 26% self-purchase, 15% milestone -->
+  <div class="section-divider">
+    <div class="section-num">2</div>
+    <div class="section-title">When diamonds enter the picture</div>
+    <div class="section-line"></div>
+  </div>
+
+  <!-- Q4 -->
+  <div class="q-card" id="qc4">
+    <div class="stat-tag"><div class="dot"></div>Validates: purchase occasion split</div>
+    <div class="q-number">Question 04</div>
+    <div class="q-text">Think of the last time you or someone close to you bought diamond jewellery. What was the occasion?</div>
+    <div class="q-hint">Select one</div>
+    <div class="options-list">
+      <label class="option-item"><input type="radio" name="q4" value="wedding" onchange="markAnswered('qc4');updateProgress()"><span class="option-label">Wedding — as part of trousseau or bridal jewellery</span></label>
+      <label class="option-item"><input type="radio" name="q4" value="anniversary" onchange="markAnswered('qc4');updateProgress()"><span class="option-label">Anniversary or relationship milestone</span></label>
+      <label class="option-item"><input type="radio" name="q4" value="birthday_gift" onchange="markAnswered('qc4');updateProgress()"><span class="option-label">Birthday gift for someone else</span></label>
+      <label class="option-item"><input type="radio" name="q4" value="self" onchange="markAnswered('qc4');updateProgress()"><span class="option-label">A gift to myself — I bought it for me</span></label>
+      <label class="option-item"><input type="radio" name="q4" value="milestone" onchange="markAnswered('qc4');updateProgress()"><span class="option-label">A personal milestone — promotion, achievement, new chapter</span></label>
+      <label class="option-item"><input type="radio" name="q4" value="festival" onchange="markAnswered('qc4');updateProgress()"><span class="option-label">A festival or religious occasion (Diwali, Dhanteras, etc.)</span></label>
+      <label class="option-item"><input type="radio" name="q4" value="investment" onchange="markAnswered('qc4');updateProgress()"><span class="option-label">As an investment or asset</span></label>
+      <label class="option-item"><input type="radio" name="q4" value="never" onchange="markAnswered('qc4');updateProgress()"><span class="option-label">I haven't bought diamond jewellery yet</span></label>
+    </div>
+  </div>
+
+  <!-- Q5 -->
+  <div class="q-card" id="qc5">
+    <div class="stat-tag"><div class="dot"></div>Validates: everyday luxury gap</div>
+    <div class="q-number">Question 05</div>
+    <div class="q-text">If you could buy diamond jewellery for any reason at all — not just for occasions — which of these would feel most natural to you?</div>
+    <div class="q-hint">Select up to 2</div>
+    <div class="options-list">
+      <label class="option-item"><input type="checkbox" name="q5" value="everyday" onchange="checkLimit(this,'q5',2);markAnswered('qc5');updateProgress()"><span class="option-label">Everyday wear — something I put on like I would a watch</span></label>
+      <label class="option-item"><input type="checkbox" name="q5" value="self_reward" onchange="checkLimit(this,'q5',2);markAnswered('qc5');updateProgress()"><span class="option-label">Rewarding myself for something I worked hard for</span></label>
+      <label class="option-item"><input type="checkbox" name="q5" value="memory" onchange="checkLimit(this,'q5',2);markAnswered('qc5');updateProgress()"><span class="option-label">Marking a memory I want to hold onto forever</span></label>
+      <label class="option-item"><input type="checkbox" name="q5" value="style" onchange="checkLimit(this,'q5',2);markAnswered('qc5');updateProgress()"><span class="option-label">Completing an outfit or expressing my personal style</span></label>
+      <label class="option-item"><input type="checkbox" name="q5" value="status" onchange="checkLimit(this,'q5',2);markAnswered('qc5');updateProgress()"><span class="option-label">Showing that I have arrived — quietly, tastefully</span></label>
+      <label class="option-item"><input type="checkbox" name="q5" value="none" onchange="checkLimit(this,'q5',2);markAnswered('qc5');updateProgress()"><span class="option-label">None — diamonds are only for special occasions, not everyday reasons</span></label>
+    </div>
+  </div>
+
+  <!-- ═══════════ SECTION 3: NATURAL VS LAB-GROWN ═══════════ -->
+  <!-- VALIDATES: 55% open to natural if story resonates; LGD threat -->
+  <div class="section-divider">
+    <div class="section-num">3</div>
+    <div class="section-title">Natural diamonds vs lab-grown — what do you actually think?</div>
+    <div class="section-line"></div>
+  </div>
+
+  <!-- Q6 -->
+  <div class="q-card" id="qc6">
+    <div class="stat-tag"><div class="dot"></div>Validates: provenance story lever (55%)</div>
+    <div class="q-number">Question 06</div>
+    <div class="q-text">When you think about buying a diamond, which of these statements most closely matches your instinct?</div>
+    <div class="q-hint">Select one</div>
+    <div class="options-list">
+      <label class="option-item"><input type="radio" name="q6" value="a" onchange="markAnswered('qc6');updateProgress()"><span class="option-label">It has to be natural — there is no substitute for a real diamond</span></label>
+      <label class="option-item"><input type="radio" name="q6" value="b" onchange="markAnswered('qc6');updateProgress()"><span class="option-label">I would choose natural if I knew where it came from and felt good about it</span></label>
+      <label class="option-item"><input type="radio" name="q6" value="c" onchange="markAnswered('qc6');updateProgress()"><span class="option-label">I am open to either — what matters is how it looks and what it costs</span></label>
+      <label class="option-item"><input type="radio" name="q6" value="d" onchange="markAnswered('qc6');updateProgress()"><span class="option-label">Lab-grown makes more sense to me — same look, better price</span></label>
+      <label class="option-item"><input type="radio" name="q6" value="e" onchange="markAnswered('qc6');updateProgress()"><span class="option-label">I have not really thought about the difference</span></label>
+    </div>
+  </div>
+
+  <!-- Q7 -->
+  <div class="q-card" id="qc7">
+    <div class="stat-tag"><div class="dot"></div>Validates: ethical concern as barrier</div>
+    <div class="q-number">Question 07</div>
+    <div class="q-text">Have you ever felt unsure about buying a natural diamond because of concerns around where it came from or how it was mined?</div>
+    <div class="q-hint">Be honest — there is no right answer</div>
+    <div class="options-list">
+      <label class="option-item"><input type="radio" name="q7" value="a" onchange="markAnswered('qc7');updateProgress()"><span class="option-label">Yes — this has genuinely held me back</span></label>
+      <label class="option-item"><input type="radio" name="q7" value="b" onchange="markAnswered('qc7');updateProgress()"><span class="option-label">It crossed my mind but did not stop me</span></label>
+      <label class="option-item"><input type="radio" name="q7" value="c" onchange="markAnswered('qc7');updateProgress()"><span class="option-label">Not really — this is not something I think about</span></label>
+      <label class="option-item"><input type="radio" name="q7" value="d" onchange="markAnswered('qc7');updateProgress()"><span class="option-label">No — I actively prefer natural and this question does not apply to me</span></label>
+    </div>
+  </div>
+
+  <!-- Q8 -->
+  <div class="q-card" id="qc8">
+    <div class="stat-tag"><div class="dot"></div>Validates: rarity as strongest driver (75%)</div>
+    <div class="q-number">Question 08</div>
+    <div class="q-text">If you found out a diamond had been grown in a laboratory rather than mined from the earth — identical in every physical way — how would that change how you felt about wearing it?</div>
+    <div class="q-hint">Select one</div>
+    <div class="options-list">
+      <label class="option-item"><input type="radio" name="q8" value="a" onchange="markAnswered('qc8');updateProgress()"><span class="option-label">It would feel less meaningful — the rarity is part of what makes it special</span></label>
+      <label class="option-item"><input type="radio" name="q8" value="b" onchange="markAnswered('qc8');updateProgress()"><span class="option-label">It might feel slightly different but I could get used to it</span></label>
+      <label class="option-item"><input type="radio" name="q8" value="c" onchange="markAnswered('qc8');updateProgress()"><span class="option-label">It would not change anything — a diamond is a diamond</span></label>
+      <label class="option-item"><input type="radio" name="q8" value="d" onchange="markAnswered('qc8');updateProgress()"><span class="option-label">I would actually prefer it — more ethical, same beauty, lower cost</span></label>
+    </div>
+  </div>
+
+  <!-- ═══════════ SECTION 4: WHAT DRIVES THE DECISION ═══════════ -->
+  <!-- VALIDATES: status vs price vs emotion vs trust hierarchy -->
+  <div class="section-divider">
+    <div class="section-num">4</div>
+    <div class="section-title">What really drives the decision</div>
+    <div class="section-line"></div>
+  </div>
+
+  <!-- Q9 — RANK -->
+  <div class="q-card" id="qc9">
+    <div class="stat-tag"><div class="dot"></div>Validates: attribute intensity per persona</div>
+    <div class="q-number">Question 09</div>
+    <div class="q-text">When you are deciding whether to buy diamond jewellery, rank these factors from most to least important.</div>
+    <div class="q-hint">Drag to reorder — top = most important</div>
+    <div class="rank-list" id="rank1">
+      <div class="rank-item" draggable="true" data-val="price"><span class="rank-handle">⠿</span><div class="rank-num" id="rn1_1">1</div><div class="rank-label">Price — it fits what I can actually spend</div></div>
+      <div class="rank-item" draggable="true" data-val="quality"><span class="rank-handle">⠿</span><div class="rank-num" id="rn1_2">2</div><div class="rank-label">Quality and certification — I need to know it is real and graded</div></div>
+      <div class="rank-item" draggable="true" data-val="emotion"><span class="rank-handle">⠿</span><div class="rank-num" id="rn1_3">3</div><div class="rank-label">Emotional meaning — the piece has a story behind it</div></div>
+      <div class="rank-item" draggable="true" data-val="design"><span class="rank-handle">⠿</span><div class="rank-num" id="rn1_4">4</div><div class="rank-label">Design and aesthetics — it has to look exactly right</div></div>
+      <div class="rank-item" draggable="true" data-val="brand"><span class="rank-handle">⠿</span><div class="rank-num" id="rn1_5">5</div><div class="rank-label">Brand trust — I need to believe in who is selling it to me</div></div>
+      <div class="rank-item" draggable="true" data-val="rarity"><span class="rank-handle">⠿</span><div class="rank-num" id="rn1_6">6</div><div class="rank-label">Rarity — knowing that what I own is genuinely scarce</div></div>
+    </div>
+  </div>
+
+  <!-- Q10 -->
+  <div class="q-card" id="qc10">
+    <div class="stat-tag"><div class="dot"></div>Validates: trust-first Tier-2 segment (85%)</div>
+    <div class="q-number">Question 10</div>
+    <div class="q-text">When buying diamond jewellery, how much do you rely on your jeweller's recommendation versus doing your own research?</div>
+    <div class="q-hint">1 = I trust only my own research · 5 = I completely follow the jeweller's advice</div>
+    <div class="scale-wrap" id="scale_q10"></div>
+    <div class="scale-labels"><span>Trust my research</span><span>Trust the jeweller</span></div>
+  </div>
+
+  <!-- Q11 -->
+  <div class="q-card" id="qc11">
+    <div class="stat-tag"><div class="dot"></div>Validates: status signalling over price point</div>
+    <div class="q-number">Question 11</div>
+    <div class="q-text">Imagine two diamonds — identical in appearance. One is natural and costs ₹80,000. One is lab-grown and costs ₹15,000. You can afford both. Which do you buy?</div>
+    <div class="q-hint">Select one — and be honest with yourself</div>
+    <div class="options-list">
+      <label class="option-item"><input type="radio" name="q11" value="a" onchange="markAnswered('qc11');updateProgress()"><span class="option-label">Natural — the story and rarity justify the price completely</span></label>
+      <label class="option-item"><input type="radio" name="q11" value="b" onchange="markAnswered('qc11');updateProgress()"><span class="option-label">Natural — but I would feel I need to justify spending more</span></label>
+      <label class="option-item"><input type="radio" name="q11" value="c" onchange="markAnswered('qc11');updateProgress()"><span class="option-label">Lab-grown — and use the remaining ₹65,000 for something else</span></label>
+      <label class="option-item"><input type="radio" name="q11" value="d" onchange="markAnswered('qc11');updateProgress()"><span class="option-label">Lab-grown — but I would feel slightly self-conscious about it</span></label>
+      <label class="option-item"><input type="radio" name="q11" value="e" onchange="markAnswered('qc11');updateProgress()"><span class="option-label">I would genuinely find this hard to decide</span></label>
+    </div>
+  </div>
+
+  <!-- ═══════════ SECTION 5: GOLD VS DIAMOND ═══════════ -->
+  <!-- VALIDATES: gold-to-diamond conversion opportunity -->
+  <div class="section-divider">
+    <div class="section-num">5</div>
+    <div class="section-title">Gold, diamonds, and shifting loyalties</div>
+    <div class="section-line"></div>
+  </div>
+
+  <!-- Q12 -->
+  <div class="q-card" id="qc12">
+    <div class="stat-tag"><div class="dot"></div>Validates: gold-to-diamond category shift</div>
+    <div class="q-number">Question 12</div>
+    <div class="q-text">How has your attitude towards gold jewellery changed in the last 3–5 years?</div>
+    <div class="q-hint">Select one</div>
+    <div class="options-list">
+      <label class="option-item"><input type="radio" name="q12" value="a" onchange="markAnswered('qc12');updateProgress()"><span class="option-label">I wear and buy gold just as much as I always have</span></label>
+      <label class="option-item"><input type="radio" name="q12" value="b" onchange="markAnswered('qc12');updateProgress()"><span class="option-label">Gold still feels important but I am buying more diamonds now</span></label>
+      <label class="option-item"><input type="radio" name="q12" value="c" onchange="markAnswered('qc12');updateProgress()"><span class="option-label">Gold feels a bit traditional — I prefer the look of diamonds</span></label>
+      <label class="option-item"><input type="radio" name="q12" value="d" onchange="markAnswered('qc12');updateProgress()"><span class="option-label">I still buy gold mainly for investment and diamonds for wearing</span></label>
+      <label class="option-item"><input type="radio" name="q12" value="e" onchange="markAnswered('qc12');updateProgress()"><span class="option-label">Gold feels outdated — I would not buy it as jewellery anymore</span></label>
+    </div>
+  </div>
+
+  <!-- Q13 -->
+  <div class="q-card" id="qc13">
+    <div class="stat-tag"><div class="dot"></div>Validates: Shaadi planner trust barrier</div>
+    <div class="q-number">Question 13</div>
+    <div class="q-text">What is the single biggest thing that has stopped you (or people you know) from buying diamond jewellery more often?</div>
+    <div class="q-hint">Select one</div>
+    <div class="options-list">
+      <label class="option-item"><input type="radio" name="q13" value="a" onchange="markAnswered('qc13');updateProgress()"><span class="option-label">Price — diamonds are simply too expensive for anything other than a big occasion</span></label>
+      <label class="option-item"><input type="radio" name="q13" value="b" onchange="markAnswered('qc13');updateProgress()"><span class="option-label">Trust — I do not know if what I am buying is genuine or if the price is fair</span></label>
+      <label class="option-item"><input type="radio" name="q13" value="c" onchange="markAnswered('qc13');updateProgress()"><span class="option-label">Occasion — there is no natural moment to buy outside of weddings</span></label>
+      <label class="option-item"><input type="radio" name="q13" value="d" onchange="markAnswered('qc13');updateProgress()"><span class="option-label">Gold feels safer as a store of value</span></label>
+      <label class="option-item"><input type="radio" name="q13" value="e" onchange="markAnswered('qc13');updateProgress()"><span class="option-label">Lab-grown has made me question whether natural diamonds are worth the premium</span></label>
+      <label class="option-item"><input type="radio" name="q13" value="f" onchange="markAnswered('qc13');updateProgress()"><span class="option-label">Nothing — I buy diamonds whenever I feel like it</span></label>
+    </div>
+  </div>
+
+  <!-- ═══════════ SECTION 6: BRAND & MEDIA ═══════════ -->
+  <!-- VALIDATES: media habits per persona -->
+  <div class="section-divider">
+    <div class="section-num">6</div>
+    <div class="section-title">How you discover and decide</div>
+    <div class="section-line"></div>
+  </div>
+
+  <!-- Q14 -->
+  <div class="q-card" id="qc14">
+    <div class="stat-tag"><div class="dot"></div>Validates: media habit mapping per segment</div>
+    <div class="q-number">Question 14</div>
+    <div class="q-text">Where do you typically first come across jewellery that you end up thinking about or buying?</div>
+    <div class="q-hint">Select up to 2</div>
+    <div class="options-list">
+      <label class="option-item"><input type="checkbox" name="q14" value="a" onchange="checkLimit(this,'q14',2);markAnswered('qc14');updateProgress()"><span class="option-label">Instagram or YouTube — I see it on someone I follow</span></label>
+      <label class="option-item"><input type="checkbox" name="q14" value="b" onchange="checkLimit(this,'q14',2);markAnswered('qc14');updateProgress()"><span class="option-label">Walking past a jewellery store or mall</span></label>
+      <label class="option-item"><input type="checkbox" name="q14" value="c" onchange="checkLimit(this,'q14',2);markAnswered('qc14');updateProgress()"><span class="option-label">A friend, family member, or colleague is wearing something</span></label>
+      <label class="option-item"><input type="checkbox" name="q14" value="d" onchange="checkLimit(this,'q14',2);markAnswered('qc14');updateProgress()"><span class="option-label">TV advertisement or celebrity endorsement</span></label>
+      <label class="option-item"><input type="checkbox" name="q14" value="e" onchange="checkLimit(this,'q14',2);markAnswered('qc14');updateProgress()"><span class="option-label">I actively search — Google, brand websites, online jewellers</span></label>
+      <label class="option-item"><input type="checkbox" name="q14" value="f" onchange="checkLimit(this,'q14',2);markAnswered('qc14');updateProgress()"><span class="option-label">My regular jeweller shows me new pieces directly</span></label>
+      <label class="option-item"><input type="checkbox" name="q14" value="g" onchange="checkLimit(this,'q14',2);markAnswered('qc14');updateProgress()"><span class="option-label">WhatsApp — family or community groups share it</span></label>
+    </div>
+  </div>
+
+  <!-- Q15 -->
+  <div class="q-card" id="qc15">
+    <div class="stat-tag"><div class="dot"></div>Validates: celebrity / campaign influence</div>
+    <div class="q-number">Question 15</div>
+    <div class="q-text">Has a celebrity, influencer, or brand campaign ever genuinely made you want to buy a piece of jewellery you had not considered before?</div>
+    <div class="q-hint">Select one</div>
+    <div class="options-list">
+      <label class="option-item"><input type="radio" name="q15" value="a" onchange="markAnswered('qc15');updateProgress()"><span class="option-label">Yes — I can think of a specific moment when this happened</span></label>
+      <label class="option-item"><input type="radio" name="q15" value="b" onchange="markAnswered('qc15');updateProgress()"><span class="option-label">It has made me more interested, but I would still research before buying</span></label>
+      <label class="option-item"><input type="radio" name="q15" value="c" onchange="markAnswered('qc15');updateProgress()"><span class="option-label">It gets my attention but does not change what I actually buy</span></label>
+      <label class="option-item"><input type="radio" name="q15" value="d" onchange="markAnswered('qc15');updateProgress()"><span class="option-label">No — I do not let external influence affect my jewellery choices</span></label>
+    </div>
+  </div>
+
+  <!-- ═══════════ SECTION 7: SELF-EXPRESSION & IDENTITY ═══════════ -->
+  <!-- VALIDATES: self-gifting Gen Z 40%, identity-driven earner segment -->
+  <div class="section-divider">
+    <div class="section-num">7</div>
+    <div class="section-title">Diamonds and who you are</div>
+    <div class="section-line"></div>
+  </div>
+
+  <!-- Q16 -->
+  <div class="q-card" id="qc16">
+    <div class="stat-tag"><div class="dot"></div>Validates: self-gifting occasion (40% Gen Z)</div>
+    <div class="q-number">Question 16</div>
+    <div class="q-text">Have you ever bought yourself jewellery — not as a gift for someone, and not because of a wedding or festival — just because you wanted to mark something or treat yourself?</div>
+    <div class="q-hint">Select one</div>
+    <div class="options-list">
+      <label class="option-item"><input type="radio" name="q16" value="a" onchange="markAnswered('qc16');updateProgress()"><span class="option-label">Yes — and it felt completely right</span></label>
+      <label class="option-item"><input type="radio" name="q16" value="b" onchange="markAnswered('qc16');updateProgress()"><span class="option-label">Yes — but I felt a little guilty or self-indulgent about it</span></label>
+      <label class="option-item"><input type="radio" name="q16" value="c" onchange="markAnswered('qc16');updateProgress()"><span class="option-label">I have thought about it but not done it yet</span></label>
+      <label class="option-item"><input type="radio" name="q16" value="d" onchange="markAnswered('qc16');updateProgress()"><span class="option-label">No — jewellery is something you receive, not something you buy for yourself</span></label>
+    </div>
+  </div>
+
+  <!-- Q17 -->
+  <div class="q-card" id="qc17">
+    <div class="stat-tag"><div class="dot"></div>Validates: quiet luxury vs status display</div>
+    <div class="q-number">Question 17</div>
+    <div class="q-text">When you wear a piece of fine jewellery in public, what matters most to you?</div>
+    <div class="q-hint">Select one</div>
+    <div class="options-list">
+      <label class="option-item"><input type="radio" name="q17" value="a" onchange="markAnswered('qc17');updateProgress()"><span class="option-label">That it is noticed and recognised by people around me</span></label>
+      <label class="option-item"><input type="radio" name="q17" value="b" onchange="markAnswered('qc17');updateProgress()"><span class="option-label">That those who know what to look for will appreciate it</span></label>
+      <label class="option-item"><input type="radio" name="q17" value="c" onchange="markAnswered('qc17');updateProgress()"><span class="option-label">That I feel good in it — whether or not anyone else notices</span></label>
+      <label class="option-item"><input type="radio" name="q17" value="d" onchange="markAnswered('qc17');updateProgress()"><span class="option-label">That it holds meaning for me personally — its history, who gave it, why</span></label>
+    </div>
+  </div>
+
+  <!-- Q18 -->
+  <div class="q-card" id="qc18">
+    <div class="stat-tag"><div class="dot"></div>Validates: De Beers brand opportunity gap</div>
+    <div class="q-number">Question 18</div>
+    <div class="q-text">What would make you feel significantly more confident and excited about buying a natural diamond in the next 12 months?</div>
+    <div class="q-hint">Select up to 2</div>
+    <div class="options-list">
+      <label class="option-item"><input type="checkbox" name="q18" value="a" onchange="checkLimit(this,'q18',2);markAnswered('qc18');updateProgress()"><span class="option-label">Knowing the exact origin and journey of the stone — where it was mined, by whom</span></label>
+      <label class="option-item"><input type="checkbox" name="q18" value="b" onchange="checkLimit(this,'q18',2);markAnswered('qc18');updateProgress()"><span class="option-label">A trusted grading certificate I can verify myself</span></label>
+      <label class="option-item"><input type="checkbox" name="q18" value="c" onchange="checkLimit(this,'q18',2);markAnswered('qc18');updateProgress()"><span class="option-label">A clear, compelling reason to buy now — not just for a wedding</span></label>
+      <label class="option-item"><input type="checkbox" name="q18" value="d" onchange="checkLimit(this,'q18',2);markAnswered('qc18');updateProgress()"><span class="option-label">Seeing someone I admire wear and talk about their natural diamond</span></label>
+      <label class="option-item"><input type="checkbox" name="q18" value="e" onchange="checkLimit(this,'q18',2);markAnswered('qc18');updateProgress()"><span class="option-label">A brand that clearly explains why natural is different from lab-grown</span></label>
+      <label class="option-item"><input type="checkbox" name="q18" value="f" onchange="checkLimit(this,'q18',2);markAnswered('qc18');updateProgress()"><span class="option-label">A more accessible price point that doesn't require a major occasion</span></label>
+    </div>
+  </div>
+
+  <!-- SUBMIT -->
+  <div class="submit-section">
+    <div class="submit-title">Thank you for your time</div>
+    <p class="submit-note">Your responses are anonymous and will be used only for research into consumer attitudes<br>toward fine jewellery in India. Nothing is stored or shared personally.</p>
+    <button class="submit-btn" onclick="submitForm()">Submit my responses</button>
+  </div>
+
+  <!-- THANK YOU -->
+  <div class="thankyou" id="thankyou">
+    <div class="thankyou-icon">◆</div>
+    <div class="thankyou-title">Your response has been recorded</div>
+    <p class="thankyou-sub">Every answer helps build a clearer picture of how India thinks about diamonds.<br>This research will inform how the industry communicates with consumers like you.</p>
+  </div>
+
+</div><!-- /form-body -->
+
+<!-- STICKY PROGRESS BAR -->
+<div class="sticky-bar">
+  <div class="sticky-progress"><strong id="sticky-count">0</strong> of 18 answered</div>
+  <div class="sticky-mini-bar"><div class="sticky-mini-fill" id="sticky-fill"></div></div>
+  <div class="sticky-next" id="sticky-next-label">Keep going ↓</div>
+</div>
+
+<script>
+// ── PROGRESS TRACKING ──
+let answered = new Set();
+const total = 18;
+
+function markAnswered(cardId) {
+  answered.add(cardId);
+  document.getElementById(cardId).classList.add('answered');
+  updateProgress();
+}
+
+function updateProgress() {
+  const count = answered.size;
+  const pct = Math.round((count / total) * 100);
+  document.getElementById('prog-fill').style.width = pct + '%';
+  document.getElementById('prog-label').textContent = count + ' of ' + total + ' answered';
+  document.getElementById('sticky-count').textContent = count;
+  document.getElementById('sticky-fill').style.width = pct + '%';
+  if (count === total) {
+    document.getElementById('sticky-next-label').textContent = 'Ready to submit ✓';
+    document.getElementById('sticky-next-label').style.color = '#B8963E';
+  } else {
+    document.getElementById('sticky-next-label').textContent = (total - count) + ' remaining ↓';
+  }
+}
+
+// ── CHECKBOX LIMIT ──
+function checkLimit(el, name, max) {
+  const checked = document.querySelectorAll(`input[name="${name}"]:checked`);
+  if (checked.length > max) { el.checked = false; }
+  // mark card answered if at least 1 checked
+  const card = el.closest('.q-card');
+  if (card && document.querySelectorAll(`input[name="${name}"]:checked`).length >= 1) {
+    markAnswered(card.id);
+  }
+}
+
+// ── SCALE BUTTONS ──
+function buildScale(containerId, qId, cardId) {
+  const wrap = document.getElementById(containerId);
+  for (let i = 1; i <= 5; i++) {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'scale-btn';
+    btn.textContent = i;
+    btn.dataset.val = i;
+    btn.dataset.q = qId;
+    btn.onclick = function() {
+      document.querySelectorAll(`.scale-btn[data-q="${qId}"]`).forEach(b => b.classList.remove('active'));
+      this.classList.add('active');
+      markAnswered(cardId);
+      updateProgress();
+    };
+    wrap.appendChild(btn);
+  }
+}
+buildScale('scale_q10', 'q10', 'qc10');
+
+// ── DRAG-TO-RANK ──
+function initDrag(listId, cardId) {
+  const list = document.getElementById(listId);
+  let dragged = null;
+
+  list.addEventListener('dragstart', e => {
+    dragged = e.target.closest('.rank-item');
+    if (dragged) dragged.classList.add('dragging');
+  });
+  list.addEventListener('dragend', e => {
+    if (dragged) dragged.classList.remove('dragging');
+    dragged = null;
+    updateRankNumbers(listId);
+    markAnswered(cardId);
+    updateProgress();
+  });
+  list.addEventListener('dragover', e => {
+    e.preventDefault();
+    const target = e.target.closest('.rank-item');
+    if (target && target !== dragged) {
+      const rect = target.getBoundingClientRect();
+      const midY = rect.top + rect.height / 2;
+      if (e.clientY < midY) {
+        list.insertBefore(dragged, target);
+      } else {
+        list.insertBefore(dragged, target.nextSibling);
+      }
+    }
+  });
+}
+
+function updateRankNumbers(listId) {
+  const items = document.querySelectorAll(`#${listId} .rank-item`);
+  items.forEach((item, i) => {
+    const numEl = item.querySelector('.rank-num');
+    if (numEl) numEl.textContent = i + 1;
+  });
+}
+
+initDrag('rank1', 'qc9');
+
+// ── OPTION HIGHLIGHT ──
+document.querySelectorAll('.option-item').forEach(item => {
+  const input = item.querySelector('input');
+  if (!input) return;
+  input.addEventListener('change', () => {
+    if (input.type === 'radio') {
+      const name = input.name;
+      document.querySelectorAll(`input[name="${name}"]`).forEach(r => {
+        r.closest('.option-item').classList.remove('selected');
+      });
+    }
+    if (input.checked) {
+      item.classList.add('selected');
+    } else {
+      item.classList.remove('selected');
+    }
+  });
+});
+
+// ── SUBMIT ──
+function submitForm() {
+  document.getElementById('form-main').style.display = 'none';
+  document.getElementById('thankyou').classList.add('show');
+  document.querySelector('.sticky-bar').style.display = 'none';
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
